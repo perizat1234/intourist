@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Point
 
-# Create your views here.
+def points(requests):
+    points_obj = Point.objects.all()
+    return render(requests, 'points.html', {'points':points_obj} )
