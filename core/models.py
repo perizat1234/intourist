@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Profile1(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE, related_name='profile',default=0)
-    region = models.CharField(max_length=1,default=0,
+    user = models.OneToOneField(User,on_delete=models.CASCADE, related_name='profile')
+    region = models.CharField(max_length=1,
      choices=(
      ('B', 'Bishkek'),
      ('O', 'Osh'),
