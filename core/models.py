@@ -1,11 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class Profile(models.Model):
-    user = models.OneToOneField( to=User, on_delete= models.CASCADE,
-    related_name='profile'
-    ),
-    region = models.CharField(max_length=1,
+class Profile1(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE, related_name='profile',default=0)
+    region = models.CharField(max_length=1,default=0,
      choices=(
      ('B', 'Bishkek'),
      ('O', 'Osh'),
@@ -19,6 +17,10 @@ class Profile(models.Model):
         upload_to='profile_photo',
         null=True, blank=True)
     
-    def __str__(self): 
-      return self.user.username     
+    def __str__(self):
+        return str(self.user)
+
+    class Meta:
+        verbose_name = 'Имя'
+        verbose_name_plural = 'Имени'
 
