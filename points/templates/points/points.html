@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page %}
+    <h1>Список всех туристических мест для посещений:</h1> 
+    {% for place in points %}
+    <div><a href="{% url 'point' place.id %}">  {{ place.name }} - {{ place.location }}</a></div>
+    {% endfor %}
+    <br>
+    
+</form>
+{% endblock %}

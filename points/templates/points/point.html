@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block page %}
+ <h2> {{ point_obj.name }}</h2>
+ <h4> {{ point_obj.location }} </h4>
+ <div>{{ point_obj.description }}</div>
+ <hr>
+ <div>Просмотров:{{ point_obj.views_count }}</div> 
+ <br>
+ <a class="btn btn-lg btn-warning " href="{% url 'edit-place' point_obj.id %}">Изменить</a>
+ <a class="btn btn-lg btn-danger " href="{% url 'delete-place' point_obj.id %}">Удалить</a>
+
+
+
+{% endblock %}

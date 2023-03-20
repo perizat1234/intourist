@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block page %}
+  <form method="POST"> 
+    {% csrf_token %}
+    {{ point_form.as_p }}
+    <button class="btn btn-success my-2 my-sm-0">Сохранить</button>
+  </form>
+{% endblock %}
